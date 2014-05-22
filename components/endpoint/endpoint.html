@@ -1,0 +1,60 @@
+<div class="textbox">
+    <h2><%- endpoint.name %></h2>
+    <p class="description"><%- endpoint.description %></p>
+    <table class="parameters">
+        <tbody>
+            <tr class="header">
+                <td>Parameter</td>
+                <td>Value</td>
+                <td>Type</td>
+                <td>Description</td>
+            </tr>
+            <% _.each(endpoint.parameters, function(parameter, name) { %>
+                <tr>
+                    <td class="code"><%- name %></td>
+                    <td>
+                        <input type="text" value="<%- values[name] %>" placeholder="<%- parameter.default %>" name="<%- name %>"/>
+                    </td>
+                    <td><%- parameter.type %></td>
+                    <td><%- parameter.description %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <table class="center">
+        <tbody>
+            <tr>
+                <td class="half-table">
+                    <a href="javascript:" class="call">Call it!</a>
+                </td>
+                <td>
+                    <a href="javascript:" class="clear">Clear Results</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="response">
+        <tbody>
+            <tr>
+                <td class="header">Call</td>
+                <td class="code"><%- callUrl %></td>
+            </tr>
+            <tr>
+                <td class="header">Response Code</td>
+                <td class="code"><%- responseCode %></td>
+            </tr>
+            <tr>
+                <td class="header">Response Headers</td>
+                <td>
+                    <div class="javascript"><%- responseHeaders %></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="header">Response Body</td>
+                <td>
+                    <div class="javascript"><%- responseBody %></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

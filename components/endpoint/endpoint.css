@@ -1,0 +1,18 @@
+.textbox {
+    margin-top: 10px;
+}
+
+.parameters input[type="text"] {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.half-table {
+    width: 50%;
+}
+
+.javascript {
+    max-width: 490px;
+    max-height: 600px;
+}
